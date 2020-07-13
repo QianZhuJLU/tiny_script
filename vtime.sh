@@ -1,4 +1,5 @@
 #!/bin/bash
+#export VASP elapsed time clearly
 a=`grep time OUTCAR | tail -1|awk '{print int($4)}'`
 echo -n "Elapsed time : ($a seconds)"
 a=$[a/3600+1]
