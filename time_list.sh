@@ -1,3 +1,5 @@
+#!/bin/bash
+#Summarize the elapsed time of a series of VASP jobs into file <time_used>
 directory=`ls -d */`
 for i in $directory ;do
     touch time_used
