@@ -16,4 +16,4 @@ for i in a:
    j=j+int(i)*int(b[k])
    k=k+1
 print(j)
-print('echo \"NELECT =',j,' >> INCAR')
+print('echo \"NELECT =',j,'\" >> INCAR')
