@@ -1,6 +1,6 @@
 #!/share/apps/anaconda3/bin/python
 #by QZhu 2020/7/18
-#to fix coordinate which greater than [0.32] in POSCAR(fractional coordinates)
+#to fix coordinate which less than [0.32] in POSCAR(fractional coordinates)
 import os
 os.system("mv POSCAR POSCAR-backup")
 with open('POSCAR-backup')as pos:
