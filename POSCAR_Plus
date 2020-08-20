@@ -1,0 +1,37 @@
+#!/bin/bash
+# need QVASP,add INCAR-*,KPOINTS in ~/exm
+# use the script when you only have a POSCAR 
+echo 'please input your INCAR mode: '
+echo 'for example:  opt  aimd ...'
+echo '------------------------------'
+read mode
+echo "your INCAR mode is INCAR-$mode"
+
+if [ -f "$HOME/exm/INCAR-${mode}" ];then
+  cp ~/exm/INCAR-${mode} ./INCAR
+  echo '1. INCAR: got!'
+else
+  echo "No INCAR-${mode} in ~/exm"
+fi
+
+if [ -f "$HOME/exm/KPOINTS" ];then
+  cp ~/exm/KPOINTS .
+  echo '2. KPOINTS: got!'
+else
+  echo "No KPOINTS in ~/exm"
+fi
+
+if [ -f "POSCAR" ];then
+  pot_ele=`sed -n 6p POSCAR`
+  qvasp -pbe $pot_ele
+  echo '3. POTCAR: got!'
+else
+  echo "no POSCAR,bro,check it"
+fi
+
+if [ -f "$HOME/exm/vasp.pbs" ];then
+  cp $HOME/exm/vasp.pbs .
+  echo '4. vasp.pbs: got!'
+else 
+  echo 'vasp.pbs do not exist'
+fi
