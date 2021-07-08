@@ -1,5 +1,5 @@
   #!/share/apps/anaconda3/bin/python
-#by QZhu 2021/7/8
+#by Q Zhu 2021/7/8
 #to find maximal "F" and minimum "T"in VASP's POSCAR Selective Dynamics 
 #Attention:only suitable for all "T" (T T T) and all "F" (F F F)
 with open('POSCAR')as pos:
