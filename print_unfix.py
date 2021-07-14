@@ -32,7 +32,7 @@ with open('POSCAR')as pos:
         coor=y.split()
         z=coor[3]
         if z=='T':
-          T_list.append([x,row_ele[x],])
+          T_list.append([x+1,row_ele[x],])
         x = x + 1
     print('the number of unfixed atoms is',len(T_list))
     for i in T_list:
