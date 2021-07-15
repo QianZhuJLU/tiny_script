@@ -27,6 +27,6 @@ with open('POSCAR')as pos:
       if tf=='F':
         if z > F_max:
     	  F_max = z
-    print'T_min is', T_min
-    print'F_max is', F_max 
+    print('T_min is', T_min)
+    print('F_max is', F_max )
     	
